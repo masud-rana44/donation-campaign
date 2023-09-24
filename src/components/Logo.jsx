@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export const Logo = () => {
   return (
-    <div>
+    <Link to="/">
       <img src="./Logo.png" alt="Logo" className="h-16 object-contain" />
-    </div>
+    </Link>
   );
 };

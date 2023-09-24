@@ -1,20 +1,30 @@
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import useLocalStorage from "../hooks/useLocalStorage";
+import toast from "react-hot-toast";
 
 export const DonationDetails = () => {
   const donationsData = useLoaderData();
   const params = useParams();
   const navigate = useNavigate();
+  const [donatedIds, setDonatedIds] = useLocalStorage([], "donatedIds");
 
   if (!Array.isArray(donationsData)) {
     return navigate("/");
   }
 
   const donation = donationsData?.find((data) => data.id === params.id);
-  console.log(donation);
 
   if (!donation) {
     return navigate("/");
   }
+
+  const handleClick = () => {
+    const isExists = donatedIds.find((id) => id === donation.id);
+    if (isExists) return;
+
+    setDonatedIds((ids) => [...ids, donation.id]);
+    toast.success(`Successfully donated ${donation.price}$`);
+  };
 
   return (
     <div className="container mx-auto w-full pt-[160px]">
@@ -22,6 +32,7 @@ export const DonationDetails = () => {
         <img className="w-full h-full" src={donation.imageUrl} />
         <div className="absolute left-0 bottom-0 h-32 w-full bg-[#0b0b0b80] flex items-center">
           <button
+            onClick={handleClick}
             style={{ backgroundColor: donation.primaryColor }}
             className="text-white text-xl font-semibold rounded-lg px-[26px] py-4 ml-3 lg:ml-9"
           >
