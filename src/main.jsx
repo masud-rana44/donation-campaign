@@ -6,6 +6,10 @@ import Home from "./pages/Home.jsx";
 import Donation from "./pages/Donation.jsx";
 import Statistics from "./pages/Statistics.jsx";
 import AppLayout from "./components/AppLayou";
+import {
+  DonationDetails,
+  loader as donationLoader,
+} from "./pages/DonationDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/donation",
         element: <Donation />,
+      },
+      {
+        path: "/donation/:id",
+        element: <DonationDetails />,
+        loader: donationLoader,
       },
       {
         path: "/statistics",

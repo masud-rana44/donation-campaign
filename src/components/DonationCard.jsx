@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const DonationCard = ({ donation }) => {
-  const { title, category, imageUrl, categoryBg, cardBg, primaryColor } =
+  const { id, title, category, imageUrl, categoryBg, cardBg, primaryColor } =
     donation;
 
   return (
-    <div
+    <Link
+      to={`/donation/${id}`}
       style={{ backgroundColor: cardBg }}
-      className={`bg-[${cardBg}] rounded-lg overflow-hidden`}
+      className={`rounded-lg overflow-hidden`}
     >
       <figure>
         <img src={imageUrl} alt="" />
@@ -21,7 +23,7 @@ export const DonationCard = ({ donation }) => {
         </div>
         <div className="text-xl font-semibold ">{title}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 
