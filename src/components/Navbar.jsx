@@ -3,10 +3,10 @@ import { Logo } from "./Logo";
 
 export const Navbar = () => {
   return (
-    <nav className="absolute w-full top-0 left-0">
+    <nav className="absolute w-full top-0 left-0 z-10">
       <div className="container mx-auto flex items-center justify-between py-12">
         <Logo />
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-12 text-lg">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
