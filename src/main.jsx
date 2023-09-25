@@ -6,11 +6,9 @@ import Home from "./pages/Home.jsx";
 import Donation from "./pages/Donation.jsx";
 import Statistics from "./pages/Statistics.jsx";
 import AppLayout from "./components/AppLayou";
-import {
-  DonationDetails,
-  loader as donationLoader,
-} from "./pages/DonationDetails";
+import { DonationDetails } from "./pages/DonationDetails";
 import ErrorPage from "./pages/ErrorPage";
+import { DataProvider } from "./contexts/DataContext";
 
 const router = createBrowserRouter([
   {
@@ -26,9 +24,8 @@ const router = createBrowserRouter([
         element: <Donation />,
       },
       {
-        path: "/donation/:id",
+        path: "/donations/:id",
         element: <DonationDetails />,
-        loader: donationLoader,
       },
       {
         path: "/statistics",
@@ -40,6 +37,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <DataProvider>
+      <RouterProvider router={router} />
+    </DataProvider>
   </React.StrictMode>
 );

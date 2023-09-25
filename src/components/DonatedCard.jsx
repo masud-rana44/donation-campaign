@@ -34,7 +34,7 @@ export const DonatedCard = ({ data }) => {
         <div className="text-2xl font-semibold text-[#0B0B0B]">{title}</div>
         <div className="font-semibold mb-3">${price.toFixed(2)}</div>
         <button
-          onClick={() => navigate(`/donation/${id}`)}
+          onClick={() => navigate(`/donations/${id}`)}
           style={{ backgroundColor: primaryColor }}
           className="px-4 py-2 text-lg font-semibold text-white rounded-lg"
         >

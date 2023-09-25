@@ -5,7 +5,7 @@ function useData() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("./data.json");
+      const response = await fetch("../data.json");
       const data = await response.json();
       setDonationsData(data);
     };

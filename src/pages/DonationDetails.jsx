@@ -1,19 +1,16 @@
 import toast from "react-hot-toast";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import useLocalStorage from "../hooks/useLocalStorage";
+import { useData } from "../contexts/DataContext";
 
 export const DonationDetails = () => {
-  const donationsData = useLoaderData();
+  const donationsData = useData();
   const params = useParams();
   const navigate = useNavigate();
   const [donatedIds, setDonatedIds] = useLocalStorage([], "donatedIds");
 
-  if (!Array.isArray(donationsData)) {
-    return navigate("/");
-  }
-
-  const donation = donationsData?.find((data) => data.id === params.id);
+  const donation = donationsData.find((data) => data.id === params.id);
 
   if (!donation) {
     return navigate("/");
@@ -22,7 +19,7 @@ export const DonationDetails = () => {
   const handleClick = () => {
     const isExists = donatedIds.find((id) => id === donation.id);
     if (isExists) {
-      return toast.error("You already have a donation");
+      return toast.error("You've already made a donation with this ID");
     }
 
     setDonatedIds((ids) => [...ids, donation.id]);
@@ -54,8 +51,3 @@ export const DonationDetails = () => {
     </div>
   );
 };
-
-export async function loader() {
-  const donations = await fetch("./data.json");
-  return donations;
-}

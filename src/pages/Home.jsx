@@ -1,8 +1,8 @@
 import { Header } from "../components/Header";
 import { DonationCard } from "../components/DonationCard";
-import useData from "../hooks/useData.js";
 import { useEffect, useState } from "react";
-import { EmptyState } from "../components/EmptyState";
+import EmptyState from "../components/EmptyState";
+import { useData } from "../contexts/DataContext";
 
 const Home = () => {
   const donationsData = useData();
@@ -12,13 +12,14 @@ const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!searchText) return;
+    if (!searchText) {
+      return setFilteredData(donationsData);
+    }
 
     const data = donationsData.filter(
       (data) => data.category.toLowerCase() === searchText.toLowerCase()
     );
     setFilteredData(data);
-    setSearchText("");
   };
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const Home = () => {
         </main>
       )}
       {filteredData.length === 0 && (
-        <EmptyState title="No data found with this category" />
+        <EmptyState message="There are no donations matching this category." />
       )}
     </div>
   );

@@ -4,8 +4,8 @@ const ErrorPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="text-center">
+    <div className=" flex items-center justify-center h-screen bg-gray-100">
+      <div className="text-center container mx-auto px-4 md:px-0">
         <h1 className="text-4xl font-bold text-red-500 mb-4">
           Oops! Something went wrong
         </h1>
@@ -21,7 +21,7 @@ const ErrorPage = () => {
         <img
           src="https://i.imgur.com/yW2W9SC.png"
           alt="Error Illustration"
-          className="max-w-[300px] mx-auto"
+          className="w-auto md:max-w-[300px] mx-auto"
         />
       </div>
     </div>

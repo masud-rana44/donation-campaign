@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const Header = ({ searchText, setSearchText, handleSubmit }) => {
   return (
     <div className="relative h-[600px] w-full bg-[url('https://i.ibb.co/fdh4tsp/bg.jpg')]  bg-center bg-cover flex items-center justify-center">
@@ -24,4 +26,10 @@ export const Header = ({ searchText, setSearchText, handleSubmit }) => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.func,
+  handleSubmit: PropTypes.func,
 };

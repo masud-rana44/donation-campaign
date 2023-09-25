@@ -1,7 +1,8 @@
 import useLocalStorage from "../hooks/useLocalStorage";
-import useData from "../hooks/useData";
 import { DonatedCard } from "../components/DonatedCard";
 import { useState } from "react";
+import EmptyState from "../components/EmptyState";
+import { useData } from "../contexts/DataContext";
 
 const Donation = () => {
   const allData = useData();
@@ -10,6 +11,15 @@ const Donation = () => {
 
   const donatedData = allData.filter((data) => donatedIds.includes(data.id));
   const shownData = isShowAll ? donatedData : donatedData.slice(0, 4);
+
+  if (shownData.length === 0) {
+    return (
+      <EmptyState
+        message="No donations have been made yet."
+        className="h-[80vh]"
+      />
+    );
+  }
 
   return (
     <div className="container px-4 lg:px-0 mx-auto pt-[200px] sm:pt-[160px] grid grid-cols-1 lg:grid-cols-2 gap-6 pb-20 lg:pb-32 ">

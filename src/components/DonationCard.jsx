@@ -7,7 +7,7 @@ export const DonationCard = ({ donation }) => {
 
   return (
     <Link
-      to={`/donation/${id}`}
+      to={`/donations/${id}`}
       style={{ backgroundColor: cardBg }}
       className="rounded-lg overflow-hidden w-full"
     >
