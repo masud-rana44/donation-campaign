@@ -1,0 +1,31 @@
+import { useNavigate } from "react-router-dom";
+
+const ErrorPage = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-red-500 mb-4">
+          Oops! Something went wrong
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          We apologize for the inconvenience. Please try again later.
+        </p>
+        <button
+          onClick={() => navigate("/")}
+          className="px-4 py-2 rounded-lg text-white font-medium text-sm bg-rose-500 transition hover:opacity-80 mb-10"
+        >
+          Back to home
+        </button>
+        <img
+          src="https://i.imgur.com/yW2W9SC.png"
+          alt="Error Illustration"
+          className="max-w-[300px] mx-auto"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default ErrorPage;

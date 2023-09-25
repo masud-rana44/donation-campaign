@@ -10,10 +10,12 @@ import {
   DonationDetails,
   loader as donationLoader,
 } from "./pages/DonationDetails";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

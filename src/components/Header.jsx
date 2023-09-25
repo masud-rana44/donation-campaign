@@ -1,6 +1,6 @@
 export const Header = ({ searchText, setSearchText, handleSubmit }) => {
   return (
-    <div className="relative h-[600px] w-full bg-[url('/bg.jfif')]  bg-center bg-cover flex items-center justify-center">
+    <div className="relative h-[600px] w-full bg-[url('https://i.ibb.co/fdh4tsp/bg.jpg')]  bg-center bg-cover flex items-center justify-center">
       <div className="bg-[#FFFFFFF2] inset-0 absolute"></div>
       <div className="flex flex-col gap-10  px-4 lg:px-0 z-10 text-center">
         <h1 className="text-4xl md:text-5xl text-[#0B0B0B] font-bold leading-[50px]">
