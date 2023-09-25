@@ -20,6 +20,7 @@ const Home = () => {
       (data) => data.category.toLowerCase() === searchText.toLowerCase()
     );
     setFilteredData(data);
+    setSearchText("");
   };
 
   useEffect(() => {
@@ -41,7 +42,10 @@ const Home = () => {
         </main>
       )}
       {filteredData.length === 0 && (
-        <EmptyState message="There are no donations matching this category." />
+        <EmptyState
+          message="There are no donations matching this category."
+          className="px-6 text-center"
+        />
       )}
     </div>
   );

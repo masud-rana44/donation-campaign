@@ -27,7 +27,7 @@ export const DonationDetails = () => {
   };
 
   return (
-    <div className="container px-4 lg:px-0 mx-auto w-full pt-[160px]">
+    <div className="container px-4 lg:px-0 mx-auto w-full pt-48 sm:pt-[160px]">
       <div className="h-[400px] lg:h-[700px] relative rounded-lg overflow-hidden">
         <img className="w-full h-full object-cover" src={donation.imageUrl} />
         <div className="absolute left-0 bottom-0 h-32 w-full bg-[#0b0b0b80] flex items-center">

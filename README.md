@@ -1,8 +1,17 @@
-# React + Vite
+<h1 align="center">Donation Campaign</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center"><img src="./src/assets/screenshot.PNG" alt="donation campaign homepage"></p>
 
-Currently, two official plugins are available:
+## 📝 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Category Selection**: Users can select specific categories (e.g., Health, Education, Clothing, Food) for their donations.
+
+2. **Search Functionality**: Allow users to search for specific donations by category.
+
+3. **Permanent Storage:**: Donations made by users are stored permanently in local storage.
+
+4. **Statistics**: In statistics page users can view graphical representations of their donation statistics through a pie chart.
+
+5. **User-Friendly Toasts**: Whenever there is any error occur the application communicate with a friendly toast message. It enhance the user experience.
+
+6. **Responsive Layout**: Entire application is responsive. It fit's all the devices according to the screen size of the user.
