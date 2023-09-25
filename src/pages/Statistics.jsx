@@ -1,4 +1,4 @@
-import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { Cell, Pie, PieChart } from "recharts";
 import useData from "../hooks/useData.js";
 import useLocalStorage from "../hooks/useLocalStorage.js";
 
@@ -32,7 +32,7 @@ const renderCustomizedLabel = ({
 
 const Statistics = () => {
   const allData = useData();
-  const donatedData = useLocalStorage([], "donatedIds");
+  const [donatedData] = useLocalStorage([], "donatedIds");
 
   const data = [
     {
@@ -47,7 +47,6 @@ const Statistics = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center">
-      {/* <ResponsiveContainer height="100%" width="100%"> */}
       <PieChart width={500} height={500}>
         <Pie
           data={data}
@@ -64,7 +63,6 @@ const Statistics = () => {
           ))}
         </Pie>
       </PieChart>
-      {/* </ResponsiveContainer> */}
 
       <div className="flex gap-4 items-center">
         <div className="flex items-center gap-2">

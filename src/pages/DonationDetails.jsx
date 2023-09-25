@@ -1,6 +1,7 @@
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
 import toast from "react-hot-toast";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const DonationDetails = () => {
   const donationsData = useLoaderData();
@@ -20,7 +21,9 @@ export const DonationDetails = () => {
 
   const handleClick = () => {
     const isExists = donatedIds.find((id) => id === donation.id);
-    if (isExists) return;
+    if (isExists) {
+      return toast.error("You already have a donation");
+    }
 
     setDonatedIds((ids) => [...ids, donation.id]);
     toast.success(`Successfully donated ${donation.price}$`);

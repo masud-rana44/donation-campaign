@@ -4,6 +4,7 @@ import useData from "../hooks/useData.js";
 
 const Home = () => {
   const donationsData = useData();
+  // const [searchText, ]
 
   return (
     <div>
