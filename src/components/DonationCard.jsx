@@ -9,10 +9,14 @@ export const DonationCard = ({ donation }) => {
     <Link
       to={`/donation/${id}`}
       style={{ backgroundColor: cardBg }}
-      className={`rounded-lg overflow-hidden`}
+      className="rounded-lg overflow-hidden w-full"
     >
       <figure>
-        <img src={imageUrl} alt="" />
+        <img
+          src={imageUrl}
+          alt="Image of donation"
+          className="w-full object-cover"
+        />
       </figure>
       <div style={{ color: primaryColor }} className="p-4 space-y-2">
         <div

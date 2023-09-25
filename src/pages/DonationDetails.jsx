@@ -30,9 +30,9 @@ export const DonationDetails = () => {
   };
 
   return (
-    <div className="container mx-auto w-full pt-[160px]">
-      <div className="h-[700px] relative">
-        <img className="w-full h-full" src={donation.imageUrl} />
+    <div className="container px-4 lg:px-0 mx-auto w-full pt-[160px]">
+      <div className="h-[400px] lg:h-[700px] relative rounded-lg overflow-hidden">
+        <img className="w-full h-full object-cover" src={donation.imageUrl} />
         <div className="absolute left-0 bottom-0 h-32 w-full bg-[#0b0b0b80] flex items-center">
           <button
             onClick={handleClick}
@@ -44,7 +44,9 @@ export const DonationDetails = () => {
         </div>
       </div>
       <div className="mt-14 ">
-        <h2 className="text-[40px] font-bold mb-6">{donation.title}</h2>
+        <h2 className="text-3xl md:text-[40px]  font-bold mb-6">
+          {donation.title}
+        </h2>
         <p className="text-[#0b0b0bb3] leading-[30px] pb-[120px]">
           {donation.description}
         </p>

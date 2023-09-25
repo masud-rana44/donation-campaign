@@ -17,16 +17,14 @@ export const DonatedCard = ({ data }) => {
   return (
     <div
       style={{ backgroundColor: cardBg }}
-      className="rounded-lg overflow-hidden flex items-center"
+      className="rounded-lg overflow-hidden flex flex-col sm:flex-row sm:items-center"
     >
-      <figure>
-        <img
-          src={imageUrl}
-          alt={`Image of ${title}`}
-          className="h-[200px] w-[220px] object-cover"
-        />
-      </figure>
-      <div style={{ color: primaryColor }} className="p-4 space-y-2">
+      <img
+        src={imageUrl}
+        alt={`Image of ${title}`}
+        className="h-full w-full sm:w-[220px] object-cover"
+      />
+      <div style={{ color: primaryColor }} className="p-6 sm:p-4 space-y-2">
         <div
           style={{ backgroundColor: categoryBg }}
           className="inline-block text-sm font-medium py-1 px-[10px] rounded"
