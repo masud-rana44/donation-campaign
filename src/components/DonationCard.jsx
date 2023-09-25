@@ -15,7 +15,7 @@ export const DonationCard = ({ donation }) => {
         <img
           src={imageUrl}
           alt="Image of donation"
-          className="w-full object-cover"
+          className="w-full h-[194px] object-cover"
         />
       </figure>
       <div style={{ color: primaryColor }} className="p-4 space-y-2">

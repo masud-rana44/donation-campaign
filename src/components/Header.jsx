@@ -8,7 +8,7 @@ export const Header = ({ searchText, setSearchText, handleSubmit }) => {
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="relative flex w-auto md:w-[470px] mx-auto"
+          className="relative flex w-full sm:w-[470px] mx-auto"
         >
           <input
             type="text"

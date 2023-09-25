@@ -12,7 +12,7 @@ const Donation = () => {
   const shownData = isShowAll ? donatedData : donatedData.slice(0, 4);
 
   return (
-    <div className="container px-4 lg:px-0 mx-auto pt-[160px] grid grid-cols-1 lg:grid-cols-2 gap-6 pb-20 lg:pb-32 ">
+    <div className="container px-4 lg:px-0 mx-auto pt-[200px] sm:pt-[160px] grid grid-cols-1 lg:grid-cols-2 gap-6 pb-20 lg:pb-32 ">
       {shownData.map((data) => (
         <DonatedCard key={data.id} data={data} />
       ))}
